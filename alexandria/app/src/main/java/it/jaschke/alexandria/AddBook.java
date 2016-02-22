@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import it.jaschke.alexandria.barcodeReader.BarcodeCaptureActivity;
 import it.jaschke.alexandria.data.AlexandriaContract;
 import it.jaschke.alexandria.services.BookService;
 import it.jaschke.alexandria.services.DownloadImage;
@@ -101,8 +102,10 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                 CharSequence text = "This button should let you scan a book for its barcode!";
                 int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                startActivityForResult(new Intent(context, BarcodeCaptureActivity.class), 1);
+
+//                Toast toast = Toast.makeText(context, text, duration);
+//                toast.show();
 
             }
         });
@@ -204,5 +207,13 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         activity.setTitle(R.string.scan);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        TextView textView = (TextView) rootView.findViewById(R.id.ean);
+        textView.setText("Some text");
     }
 }

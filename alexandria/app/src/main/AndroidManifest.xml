@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
 
+
         <activity
             android:label="@string/title_activity_settings"
             android:name=".SettingsActivity"
@@ -32,6 +33,11 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <activity android:name=".barcodeReader.BarcodeCaptureActivity">
+
+
+
+        </activity>
 
 
         <provider
