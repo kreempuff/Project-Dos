@@ -11,6 +11,8 @@ public class Widget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+
+
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
 
@@ -21,7 +23,6 @@ public class Widget extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        Toast.makeText(context, "Widget Created", Toast.LENGTH_SHORT).show();
         super.onEnabled(context);
     }
 
